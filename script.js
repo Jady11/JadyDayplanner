@@ -24,16 +24,6 @@ var textArea3 = $("#3PM");
 var textArea4 = $("#4PM");
 var textArea5 = $("#5PM");
 
-// textArea9.val(textAreaVal9);
-// textArea10.val(textAreaVal10);
-// textArea11.val(textAreaVal11);
-// textArea12.val(textAreaVal12);
-// textArea1.val(textAreaVal1);
-// textArea2.val(textAreaVal2);
-// textArea3.val(textAreaVal3);
-// textArea4.val(textAreaVal4);
-// textArea5.val(textAreaVal5);
-
 
 
 // past present future block color change
@@ -64,23 +54,23 @@ $(".time-block").each(function () {
 
 time();
 
-$("9AM .description").val(localStorage.getItem("9AM"));
-$("10AM .description").val(localStorage.getItem("10AM"));
-$("11AM .description").val(localStorage.getItem("11AM"));
-$("12PM .description").val(localStorage.getItem("12PM"));
-$("1PM .description").val(localStorage.getItem("1PM"));
-$("2PM .description").val(localStorage.getItem("2PM"));
-$("3PM .description").val(localStorage.getItem("3PM"));
-$("4PM .description").val(localStorage.getItem("4PM"));
-$("5PM .description").val(localStorage.getItem("5PM"));
+$("#9AM .input").val(localStorage.getItem("9AM"));
+$("#10AM .input").val(localStorage.getItem("10AM"));
+$("#11AM .input").val(localStorage.getItem("11AM"));
+$("#12PM .input").val(localStorage.getItem("12PM"));
+$("#1PM .input").val(localStorage.getItem("1PM"));
+$("#2PM .input").val(localStorage.getItem("2PM"));
+$("#3PM .input").val(localStorage.getItem("3PM"));
+$("#4PM .input").val(localStorage.getItem("4PM"));
+$("#5PM .input").val(localStorage.getItem("5PM"));
 
-$(".saveBtn").on("click", function() {
-    var value= $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
-    localStorage.setItem(value, time);
-
-
-})
+$(".saveBtn").on("click", function () {
+     var value = $(this).siblings(".input").val();
+     console.log(value);
+     var time = $(this).parent().attr("id");
+     console.log(time);
+     localStorage.setItem(time, value);
+   });
 
 
 // add current date function
